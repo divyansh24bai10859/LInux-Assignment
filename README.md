@@ -75,7 +75,7 @@ Loops through an array of important system directories (`/etc`, `/var/log`, `/ho
 ---
 
 ### Script 4 — Log File Analyzer
-**File:** `log_analyzer.sh`
+**File:** `log analyzer.sh`
 
 Reads a log file line by line and counts how many lines contain a given keyword (default: `error`, case-insensitive). Prints the last 5 matching lines. Implements a do-while style retry mechanism to try fallback log file locations if the specified file does not exist.
 
