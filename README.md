@@ -205,7 +205,7 @@ All written content in the project report is the original work of the student. S
 The shell scripts in this repository are released under the **MIT Licence** — in the spirit of the open-source values explored in the project itself.
 
 ```
-MIT License — Copyright (c) 2026 Divyansh Rai
+MIT License — Copyright (c) 2026 Divyansh24bai10859
 Permission is granted to use, copy, modify, and distribute this software
 for any purpose, with or without modification.
 ```
