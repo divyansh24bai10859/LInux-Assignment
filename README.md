@@ -147,10 +147,10 @@ sudo ./disk.sh
 **Script 4 — Log File Analyzer**
 ```bash
 # Basic usage with default keyword 'error'
-./log_analyzer.sh /var/log/syslog
+./log analyzer.sh /var/log/syslog
 
 # With a custom keyword
-./log_analyzer.sh /var/log/syslog WARNING
+./log analyzer.sh /var/log/syslog WARNING
 ```
 > If no log file is accessible, the script will automatically try fallback locations.
 
