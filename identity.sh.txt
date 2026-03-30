@@ -1,0 +1,89 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\raidi> wsl
+┏━(Message from Kali developers)
+┃
+┃ This is a minimal installation of Kali Linux, you likely
+┃ want to install supplementary tools. Learn how:
+┃ ⇒ https://www.kali.org/docs/troubleshooting/common-minimum-setup/
+┃
+┗━(Run: “touch ~/.hushlogin” to hide this message)
+┌──(DivyanshRai㉿DIVYANSH)-[/mnt/c/Users/raidi]
+└─$ !/bin/bash
+-bash: !/bin/bash: event not founds
+┌──(DivyanshRai㉿DIVYANSH)-[/mnt/c/Users/raidi]
+└─$ KERNEL=$(uname -r)                          # Kernel version
+DISTRO=$(cat /etc/os-release | grep "^PRETTY_NAME" | cut -d= -f2 | tr -d '"')  # Distro name
+USER_NAME=$(whoami)                         # Logged-in user
+HOME_DIR=$HOME                             # User's home directory
+UPTIME=$(uptime -p)                         # System uptime in human-readable form
+CURRENT_DATE=$(date '+%A, %d %B %Y')        # Full date (e.g., Monday, 01 January 2024)
+CURRENT_TIME=$(date '+%H:%M:%S %Z')         # Current time with timezone
+
+┌──(DivyanshRai㉿DIVYANSH)-[/mnt/c/Users/raidi]
+└─$  echo "================================================================"
+echo "        OPEN SOURCE AUDIT — System Identity Report             "
+echo "================================================================"
+echo ""
+echo "  Student  : $STUDENT_NAME"
+echo "  Reg No   : $REG_NO"
+echo "  Software : $SOFTWARE_CHOICE"
+echo ""
+echo "----------------------------------------------------------------"
+echo "  SYSTEM INFORMATION"
+echo "----------------------------------------------------------------"
+echo "  Distribution : $DISTRO"
+echo "  Kernel       : $KERNEL"
+echo "  Logged User  : $USER_NAME"
+echo "  Home Dir     : $HOME_DIR"
+echo "  Uptime       : $UPTIME"
+echo "  Date         : $CURRENT_DATE"
+echo "  Time         : $CURRENT_TIME"
+echo ""
+echo "----------------------------------------------------------------"
+echo "  LICENSE INFORMATION"
+echo "----------------------------------------------------------------"
+echo "  This operating system is covered under:"
+echo "  $OS_LICENSE"
+echo ""
+echo "  The GPL v2 ensures that the OS kernel source code is freely"
+echo "  available, modifiable, and redistributable — as long as any"
+echo "  derivative work is also distributed under the same license."
+echo "================================================================"
+echo ""
+================================================================
+        OPEN SOURCE AUDIT — System Identity Report
+================================================================
+
+  Student  : Divyansh Rai
+  Reg No   : 24BAI10859
+  Software : Git
+
+----------------------------------------------------------------
+  SYSTEM INFORMATION
+----------------------------------------------------------------
+  Distribution : Kali GNU/Linux Rolling
+  Kernel       : 6.6.87.2-microsoft-standard-WSL2
+  Logged User  : DivyanshRai
+  Home Dir     : /home/DivyanshRai
+  Uptime       : up 8 minutes
+  Date         : Sunday, 29 March 2026
+  Time         : 23:09:24 IST
+
+----------------------------------------------------------------
+  LICENSE INFORMATION
+----------------------------------------------------------------
+  This operating system is covered under:
+
+
+  The GPL v2 ensures that the OS kernel source code is freely
+  available, modifiable, and redistributable — as long as any
+  derivative work is also distributed under the same license.
+================================================================
+
+
+┌──(DivyanshRai㉿DIVYANSH)-[/mnt/c/Users/raidi]
+└─$
