@@ -7,8 +7,8 @@
 
 | Field | Details |
 |---|---|
-| **Student Name** |Divyansh Rai|
-| **Registration Number** |24BAI10859|
+| **Student Name** | Divyansh Rai |
+| **Registration Number** | 24BAI10859 |
 | **Chosen Software** | Git |
 | **Licence of Software** | GNU General Public License v2 (GPL v2) |
 | **Course** | Open Source Software (OSS NGMC) |
@@ -27,19 +27,16 @@ The repository contains five shell scripts and a written project report covering
 
 ## Repository Structure
 
-```
-oss-audit-[rollnumber]/
+```text
+oss-audit-24BAI10859/
 │
-├── README.md                          ← This file
-│
-├── scripts/
-│   ├── identity.sh     ← System Identity Report
-│   ├── inspector.sh   ← FOSS Package Inspector
-│   ├── disk.sh  ← Disk & Permission Auditor
-│   ├── log analyzer.sh        ← Log File Analyzer
-│   └── manifesto.sh ← Open Source Manifesto Generator
-│
-└── OSS_Audit_Git_Report.pdf           ← Project report (also submitted on portal)
+├── README.md                  ← This file
+├── identity.sh                ← System Identity Report
+├── inspector.sh               ← FOSS Package Inspector
+├── disk.sh                    ← Disk & Permission Auditor
+├── log_analyzer.sh            ← Log File Analyzer
+├── manifesto.sh               ← Open Source Manifesto Generator
+└── OSS_Audit_Git_Report.pdf   ← Project report (also submitted on portal)
 ```
 
 ---
@@ -62,9 +59,9 @@ Displays a formatted welcome screen showing the current Linux system's identity:
 ### Script 2 — FOSS Package Inspector
 **File:** `inspector.sh`
 
-Checks whether the `git` package is installed on the system. Supports both RPM-based (Fedora, CentOS, RHEL) and Debian-based (Ubuntu, Debian) distributions. Displays version, licence, and summary. Uses a `case` statement to print a philosophy note about git and other well-known open-source packages.
+Checks whether the `git` package is installed on the system. Supports both Debian-based (Kali, Ubuntu) and RPM-based (Fedora, RHEL) distributions. Displays version, licence, and summary. Uses a `case` statement to print a philosophy note about git and other well-known open-source packages.
 
-**Shell concepts:** `if-then-else`, `case` statement, `rpm -qi`, `dpkg -l`, `grep -E`, `command -v`, pipe chaining
+**Shell concepts:** `if-then-else`, `case` statement, `dpkg -l`, `rpm -qi`, `grep -E`, `command -v`, pipe chaining
 
 ---
 
@@ -78,7 +75,7 @@ Loops through an array of important system directories (`/etc`, `/var/log`, `/ho
 ---
 
 ### Script 4 — Log File Analyzer
-**File:** `log analyzer.sh`
+**File:** `log_analyzer.sh`
 
 Reads a log file line by line and counts how many lines contain a given keyword (default: `error`, case-insensitive). Prints the last 5 matching lines. Implements a do-while style retry mechanism to try fallback log file locations if the specified file does not exist.
 
@@ -98,27 +95,26 @@ Interactively asks the user three questions and composes a personalised open-sou
 ## How to Run the Scripts
 
 ### Prerequisites
-- A Linux system (physical machine, virtual machine, or WSL2)
+- A Linux environment (Developed and tested on **Kali Linux via WSL2**)
 - Bash shell (version 4.0 or later)
-- For Script 2: either `rpm` (RPM-based distros) or `dpkg` (Debian-based distros)
 - For Script 4: a readable log file (see note below)
 
 ### Step 1 — Clone the repository
 ```bash
-git clone https://github.com/divyansh24bai10859/Linux-Assignment.git
-cd Open_Source_Project_GIT
+git clone [INSERT YOUR GITHUB REPO URL HERE]
+cd [INSERT YOUR REPO FOLDER NAME HERE]
 ```
 
 ### Step 2 — Make scripts executable
 ```bash
-chmod +x scripts/*.sh
+chmod +x *.sh
 ```
 
 ### Step 3 — Run each script
 
 **Script 1 — System Identity Report**
 ```bash
-./scripts/identity.sh
+./identity.sh
 ```
 No arguments required. Displays system information immediately.
 
@@ -126,27 +122,24 @@ No arguments required. Displays system information immediately.
 
 **Script 2 — FOSS Package Inspector**
 ```bash
-./scripts/inspector.sh
+./inspector.sh
 ```
 No arguments required. Checks for `git` package automatically. Ensure git is installed first:
 ```bash
-# Ubuntu/Kali
-sudo apt install git
-
-# Fedora/CentOS/RHEL
-sudo dnf install git
+# Kali/Ubuntu/Debian
+sudo apt update && sudo apt install git
 ```
 
 ---
 
 **Script 3 — Disk and Permission Auditor**
 ```bash
-./scripts/disk.sh
+./disk.sh
 ```
 No arguments required. Audits standard system directories and Git config locations.
 > Note: Some directories (like `/var/log`) may require sudo for size reporting:
 ```bash
-sudo ./scripts/disk.sh
+sudo ./disk.sh
 ```
 
 ---
@@ -154,13 +147,10 @@ sudo ./scripts/disk.sh
 **Script 4 — Log File Analyzer**
 ```bash
 # Basic usage with default keyword 'error'
-./scripts/log analyzer.sh /var/log/syslog
+./log_analyzer.sh /var/log/syslog
 
 # With a custom keyword
-./scripts/log analyzer.sh /var/log/syslog WARNING
-
-# On Fedora/CentOS — use messages instead
-./scripts/log analyzer.sh /var/log/messages error
+./log_analyzer.sh /var/log/syslog WARNING
 ```
 > If no log file is accessible, the script will automatically try fallback locations.
 
@@ -168,7 +158,7 @@ sudo ./scripts/disk.sh
 
 **Script 5 — Open Source Manifesto Generator**
 ```bash
-./scripts/manifesto.sh
+./manifesto.sh
 ```
 Interactive — the script will prompt you for three answers. Your manifesto is saved as `manifesto_[yourusername].txt` in the current directory.
 
@@ -178,9 +168,9 @@ Interactive — the script will prompt you for three answers. Your manifesto is 
 
 | Dependency | Used In | How to Install |
 |---|---|---|
-| `bash` (v4+) | All scripts | Pre-installed on all Linux distros |
-| `git` | Script 2, 3 | `sudo apt install git` or `sudo dnf install git` |
-| `rpm` or `dpkg` | Script 2 | Pre-installed on RPM/Debian-based distros |
+| `bash` (v4+) | All scripts | Pre-installed |
+| `git` | Script 2, 3 | `sudo apt install git` |
+| `dpkg` | Script 2 | Pre-installed on Kali/Debian-based distros |
 | `awk`, `grep`, `cut`, `du`, `ls` | Scripts 1, 2, 3, 4 | Part of GNU coreutils — pre-installed everywhere |
 | `uname`, `whoami`, `uptime`, `date` | Script 1 | Pre-installed on all POSIX systems |
 
@@ -188,9 +178,8 @@ Interactive — the script will prompt you for three answers. Your manifesto is 
 
 ## Tested On
 
-- Kali-Linux
-- Fedora 39
-- Debian 12 (Bookworm)
+- **Kali GNU/Linux Rolling** (Kernel: 6.6.x-microsoft-standard-WSL2)
+- Environment: Windows Subsystem for Linux (WSL2)
 
 ---
 
@@ -204,8 +193,8 @@ All written content in the project report is the original work of the student. S
 
 The shell scripts in this repository are released under the **MIT Licence** — in the spirit of the open-source values explored in the project itself.
 
-```
-MIT License — Copyright (c) 2026 Divyansh24bai10859
+```text
+MIT License — Copyright (c) 2026 Divyansh Rai
 Permission is granted to use, copy, modify, and distribute this software
 for any purpose, with or without modification.
 ```
