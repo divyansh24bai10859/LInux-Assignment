@@ -105,7 +105,7 @@ Interactively asks the user three questions and composes a personalised open-sou
 
 ### Step 1 — Clone the repository
 ```bash
-git clone https://github.com/manimrohitrao/Open_Source_Project_GIT.git
+git clone https://github.com/divyansh24bai10859/Linux-Assignment.git
 cd Open_Source_Project_GIT
 ```
 
@@ -118,7 +118,7 @@ chmod +x scripts/*.sh
 
 **Script 1 — System Identity Report**
 ```bash
-./scripts/script1_system_identity.sh
+./scripts/identity.sh
 ```
 No arguments required. Displays system information immediately.
 
@@ -126,11 +126,11 @@ No arguments required. Displays system information immediately.
 
 **Script 2 — FOSS Package Inspector**
 ```bash
-./scripts/script2_package_inspector.sh
+./scripts/inspector.sh
 ```
 No arguments required. Checks for `git` package automatically. Ensure git is installed first:
 ```bash
-# Ubuntu/Debian
+# Ubuntu/Kali
 sudo apt install git
 
 # Fedora/CentOS/RHEL
@@ -141,12 +141,12 @@ sudo dnf install git
 
 **Script 3 — Disk and Permission Auditor**
 ```bash
-./scripts/script3_disk_permission_auditor.sh
+./scripts/disk.sh
 ```
 No arguments required. Audits standard system directories and Git config locations.
 > Note: Some directories (like `/var/log`) may require sudo for size reporting:
 ```bash
-sudo ./scripts/script3_disk_permission_auditor.sh
+sudo ./scripts/disk.sh
 ```
 
 ---
@@ -154,13 +154,13 @@ sudo ./scripts/script3_disk_permission_auditor.sh
 **Script 4 — Log File Analyzer**
 ```bash
 # Basic usage with default keyword 'error'
-./scripts/script4_log_analyzer.sh /var/log/syslog
+./scripts/log analyzer.sh /var/log/syslog
 
 # With a custom keyword
-./scripts/script4_log_analyzer.sh /var/log/syslog WARNING
+./scripts/log analyzer.sh /var/log/syslog WARNING
 
 # On Fedora/CentOS — use messages instead
-./scripts/script4_log_analyzer.sh /var/log/messages error
+./scripts/log analyzer.sh /var/log/messages error
 ```
 > If no log file is accessible, the script will automatically try fallback locations.
 
@@ -168,7 +168,7 @@ sudo ./scripts/script3_disk_permission_auditor.sh
 
 **Script 5 — Open Source Manifesto Generator**
 ```bash
-./scripts/script5_manifesto_generator.sh
+./scripts/manifesto.sh
 ```
 Interactive — the script will prompt you for three answers. Your manifesto is saved as `manifesto_[yourusername].txt` in the current directory.
 
@@ -188,7 +188,7 @@ Interactive — the script will prompt you for three answers. Your manifesto is 
 
 ## Tested On
 
-- Ubuntu 22.04 LTS (x86_64)
+- Kali-Linux
 - Fedora 39
 - Debian 12 (Bookworm)
 
@@ -205,7 +205,7 @@ All written content in the project report is the original work of the student. S
 The shell scripts in this repository are released under the **MIT Licence** — in the spirit of the open-source values explored in the project itself.
 
 ```
-MIT License — Copyright (c) 2026 Manim Rohit Rao
+MIT License — Copyright (c) 2026 Divyansh Rai
 Permission is granted to use, copy, modify, and distribute this software
 for any purpose, with or without modification.
 ```
